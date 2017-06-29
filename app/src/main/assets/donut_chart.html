@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+      // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'ITEM');
+      data.addColumn('number', 'VALUE');
+      data.addRows([
+        ['먹자', Android.getplay_type_eat()],
+        ['쉬자', Android.getplay_type_rest()],
+        ['놀자', Android.getplay_type_play()]
+      ]);
+
+       var data2 = google.visualization.arrayToDataTable([
+         ['Month', '먹자', '쉬자', '놀자', '전체지출', '평균지출'],
+         [Android.getdate_firstmonth(),Android.eat_month_total(),Android.rest_month_total(),Android.play_month_total(),Android.month_total(), Android.month_average()],
+         [Android.getdate_secondmonth(),Android.eat_second_month_total(),Android.rest_second_month_total(),Android.play_second_total(),Android.second_month_total(),Android.second_average()],
+      ]);
+
+      // Set chart options
+      var options = {'title':'년 소비 유형별 통계',
+                     'width':500,
+                     'height':300,
+                      colors: ['#FF9900', '#33CC99', '#00CCFF']
+                     ,is3D : true};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+
+
+      // 차트 2시작
+      var barchart_option = {
+      title : '월별 소비 통계',
+      vAxis: {title: '지출'},
+      hAxis: {title: '월'},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+      var barchart = new google.visualization.ComboChart(document.getElementById('barchart_div'));
+         barchart.draw(data2, barchart_option);
+
+    }
+    </script>
+</head>
+
+<body>
+<!--Div that will hold the pie chart-->
+<div id="chart_div" style="width:500; height:300; margin-left:-40px;"></div>
+<div id="barchart_div" style="width:400; height:300; margin-left:-10px"></div>
+</body>
+</html>

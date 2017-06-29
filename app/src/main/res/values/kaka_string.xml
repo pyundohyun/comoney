@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 앱 등록시 받은 네이티브 앱 키 -->
+    <string name="kakao_app_key">3d11d4d7e8e963252fb4f3a29baac00b</string>
+    <!-- "kakao" + 네이티브앱키 -->
+    <string name="kakao_sheme">kakao3d11d4d7e8e963252fb4f3a29baac00b</string>
+    <!-- host는 "kakaolink"로 고정된 값을 사용 -->
+    <string name="kakaolink_host">kakaolink</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CoMoney</string>
+    <string name="select_type">항목을 선택하세요</string>
+    <string-array name="play_type">
+
+        <item>먹자</item>
+        <item>놀자</item>
+        <item>쉬자</item>
+
+    </string-array>
+
+</resources>

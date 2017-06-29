@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#F58282"
+    android:orientation="vertical"
+    tools:context="com.example.lenovo.comoney.MainActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="세상에 하나뿐인 커플 가계부"
+        android:textAlignment="center"
+        android:textSize="15pt"
+        android:textColor="#ffffff"
+        android:layout_marginTop="27dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mainview2"
+        android:layout_marginTop="40pt"
+        android:background="#F58282"/>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:id="@+id/lay1"
+            android:orientation="horizontal"
+            android:layout_marginTop="30pt"
+            android:padding="3pt">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="아이디 :"
+            android:textSize="10pt" />
+
+            <EditText
+                android:id="@+id/id_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:hint="아이디를 입력하세요"
+                android:text=""/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lay2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:padding="3pt"
+            android:layout_above="@+id/login_btn"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/text1"
+                android:text="패스워드 :"
+                android:gravity="center"
+                android:layout_weight="2"
+                android:textSize="10pt" />
+
+            <EditText
+                android:id="@+id/passwd_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:inputType="textPassword"
+                android:layout_weight="1"
+                android:layout_below="@id/id_textview"
+                android:layout_alignRight="@+id/text2"
+                android:hint="패스워드를 입력하세요"
+                android:text="" />
+
+            <!--android:text="p1@"-->
+        </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_marginTop="10pt"
+        android:id="@+id/login_btn"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:id="@+id/account_btn" />
+
+
+</LinearLayout>

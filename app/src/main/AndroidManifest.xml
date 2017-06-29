@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lenovo.comoney">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application
+
+        android:allowBackup="true"
+        android:name=".ApplicationClass"
+        android:icon="@mipmap/mainicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AccountClass">
+                <data android:scheme="@string/kakao_sheme" android:host="@string/kakaolink_host" />
+        </activity>
+        <meta-data android:name="com.kakao.sdk.AppKey"  android:value="@string/kakao_app_key" />
+        <activity android:name=".ContentClass"></activity>
+        <activity android:name=".MainView"></activity>
+        <activity android:name=".chartActivity"></activity>
+    </application>
+
+</manifest>
